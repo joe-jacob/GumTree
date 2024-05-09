@@ -1,5 +1,9 @@
 package pages;
 
+//Author: Joe Jacob
+//Date of creation: 23/04/2024
+//Last modified: 24/04/2024
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -2,56 +2,56 @@
 <testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-08T02:29:42 IST" name="Suite" finished-at="2024-05-08T02:31:59 IST" duration-ms="137179">
+  <suite started-at="2024-05-09T10:14:14 IST" name="Suite" finished-at="2024-05-09T10:17:08 IST" duration-ms="173824">
     <groups>
     </groups>
-    <test started-at="2024-05-08T02:29:42 IST" name="Test" finished-at="2024-05-08T02:31:59 IST" duration-ms="137179">
+    <test started-at="2024-05-09T10:14:14 IST" name="Test" finished-at="2024-05-09T10:17:08 IST" duration-ms="173824">
       <class name="testCases.TC_001_GumTree">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:29:43 IST" name="setUp" finished-at="2024-05-08T02:29:57 IST" duration-ms="14032" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:14:15 IST" name="setUp" finished-at="2024-05-09T10:14:32 IST" duration-ms="16940" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="login()[pri:1, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:29:57 IST" name="login" finished-at="2024-05-08T02:30:35 IST" duration-ms="37570" status="PASS">
+        <test-method signature="login()[pri:1, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:14:32 IST" name="login" finished-at="2024-05-09T10:15:06 IST" duration-ms="34084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="getCarDetails()[pri:2, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:30:35 IST" name="getCarDetails" finished-at="2024-05-08T02:30:53 IST" duration-ms="18214" status="PASS">
+        <test-method signature="getCarDetails()[pri:2, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:15:06 IST" name="getCarDetails" finished-at="2024-05-09T10:15:41 IST" duration-ms="35281" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getCarDetails -->
-        <test-method signature="adSearch()[pri:3, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:30:53 IST" name="adSearch" finished-at="2024-05-08T02:30:58 IST" duration-ms="4292" status="PASS">
+        <test-method signature="adSearch()[pri:3, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:15:42 IST" name="adSearch" finished-at="2024-05-09T10:15:47 IST" duration-ms="5192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adSearch -->
-        <test-method signature="adDetails()[pri:4, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:30:58 IST" name="adDetails" finished-at="2024-05-08T02:31:15 IST" duration-ms="17419" status="PASS">
+        <test-method signature="adDetails()[pri:4, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:15:47 IST" name="adDetails" finished-at="2024-05-09T10:15:58 IST" duration-ms="11247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adDetails -->
-        <test-method signature="profileVerification()[pri:5, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:16 IST" name="profileVerification" finished-at="2024-05-08T02:31:24 IST" duration-ms="7915" status="PASS">
+        <test-method signature="profileVerification()[pri:5, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:15:59 IST" name="profileVerification" finished-at="2024-05-09T10:16:13 IST" duration-ms="14145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- profileVerification -->
-        <test-method signature="favouriteAds()[pri:6, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:24 IST" name="favouriteAds" finished-at="2024-05-08T02:31:32 IST" duration-ms="8581" status="PASS">
+        <test-method signature="favouriteAds()[pri:6, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:13 IST" name="favouriteAds" finished-at="2024-05-09T10:16:27 IST" duration-ms="13835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- favouriteAds -->
-        <test-method signature="MyDetails()[pri:7, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:33 IST" name="MyDetails" finished-at="2024-05-08T02:31:36 IST" duration-ms="3081" status="PASS">
+        <test-method signature="MyDetails()[pri:7, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:28 IST" name="MyDetails" finished-at="2024-05-09T10:16:34 IST" duration-ms="6721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MyDetails -->
-        <test-method signature="AboutGumtree()[pri:8, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:36 IST" name="AboutGumtree" finished-at="2024-05-08T02:31:43 IST" duration-ms="7159" status="PASS">
+        <test-method signature="AboutGumtree()[pri:8, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:34 IST" name="AboutGumtree" finished-at="2024-05-09T10:16:42 IST" duration-ms="7646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AboutGumtree -->
-        <test-method signature="logout()[pri:9, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:43 IST" name="logout" finished-at="2024-05-08T02:31:47 IST" duration-ms="3143" status="PASS">
+        <test-method signature="logout()[pri:9, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:43 IST" name="logout" finished-at="2024-05-09T10:16:48 IST" duration-ms="5024" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method signature="InValidLogin()[pri:10, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:47 IST" name="InValidLogin" finished-at="2024-05-08T02:31:53 IST" duration-ms="6530" status="PASS">
+        <test-method signature="InValidLogin()[pri:10, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:48 IST" name="InValidLogin" finished-at="2024-05-09T10:16:58 IST" duration-ms="10031" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InValidLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-08T02:31:54 IST" name="closeBrowser" finished-at="2024-05-08T02:31:59 IST" duration-ms="5761" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC_001_GumTree@231f98ef]" started-at="2024-05-09T10:16:58 IST" name="closeBrowser" finished-at="2024-05-09T10:17:08 IST" duration-ms="9253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

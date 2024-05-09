@@ -6,16 +6,7 @@
       <class name="testCases.TC_001_GumTree">
         <methods>
           <include name="setUp"/>
-          <include name="getCarDetails"/>
-          <include name="AboutGumtree"/>
-          <include name="logout"/>
-          <include name="MyDetails"/>
-          <include name="favouriteAds"/>
-          <include name="profileVerification"/>
           <include name="login"/>
-          <include name="adDetails"/>
-          <include name="InValidLogin"/>
-          <include name="adSearch"/>
         </methods>
       </class> <!-- testCases.TC_001_GumTree -->
     </classes>

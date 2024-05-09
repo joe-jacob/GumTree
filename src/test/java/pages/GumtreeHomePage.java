@@ -1,5 +1,9 @@
 package pages;
 
+//Author: Joe Jacob , Aaditya V
+//Date of creation: 23/04/2024
+//Last modified: 07/05/2024
+
 import java.time.Duration;
 import java.util.List;
 
@@ -10,7 +14,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -103,7 +106,7 @@ public class GumtreeHomePage extends BasePage {
 	@FindBy(xpath = "//p[contains(text(), 'Email address verified')]")
 	WebElement EmailVerified;
 
-	@FindBy(xpath = "//a[contains( text(), 'Audi A4')]")
+	@FindBy(xpath = "//h1[contains( text(), 'Audi A4')]")
 	WebElement CarsVerification;
 
 	@FindBy(xpath = "//button[@class='button button--primary search-button']")
@@ -127,8 +130,8 @@ public class GumtreeHomePage extends BasePage {
 	@FindBy(xpath = "//h2[@class='css-9hen01 ew0ql603']")
 	WebElement LaptopVerification;
 
+	//Author: Aaditya V
 	public void AboutGumtree() {
-
 		js.executeScript(" window.scrollBy(0,800)", "");
 
 		// Validation for About Gumtree is enabled
@@ -143,15 +146,12 @@ public class GumtreeHomePage extends BasePage {
 		// Capturing the paragraph and printing it in the console
 		String Paragraph = Para1.getText();
 		System.out.println(Paragraph);
-
-		driver.navigate().back();
-		// Scrolling Up
-		js.executeScript(" window.scrollTo(0,0)", "");
-
-	}
-
+		}
+	
+	
+	//Author: Aaditya V
 	public void MyDetails() {
-
+		
 		js.executeScript(" window.scrollBy(800,0)", "");
 
 		// Validation for Menu Button
@@ -173,18 +173,20 @@ public class GumtreeHomePage extends BasePage {
 		Assert.assertEquals(true, Login_Email.isDisplayed());
 		String email = Login_Email.getText();
 		System.out.println(email);
-
 	}
-
+	
+	//Author: Joe Jacob
 	public void HomePageVerification() {
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
 		String expTitle = "Gumtree | Free classified ads from the #1 classifieds site in the UK";
 		Assert.assertEquals(expTitle, actTitle, "Incorrect Page");
 	}
-
-	public void search() throws InterruptedException {
-
+	
+	//Author: Joe Jacob
+	public void search() {
+		try {
+		Assert.assertEquals(true,searchBar.isDisplayed());
 		String value = searchBar.getAttribute("value");
 		if (value != null) {
 			int valLen = value.length();
@@ -193,85 +195,89 @@ public class GumtreeHomePage extends BasePage {
 			}
 		}
 		searchBar.sendKeys("Laptop");
-		// Assert.assertEquals(true, searchBar.isDisplayed());
 		Actions act = new Actions(driver);
 		act.sendKeys(Keys.ENTER).perform();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
+	//Author: Joe Jacob
 	public void LaptopDetails() {
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,400)", "");
+		Assert.assertEquals(true,Laptop.isDisplayed());
 		Laptop.click();
-		// Assert.assertEquals(true, Laptop.isEnabled());
 		String expResult = LaptopVerification.getText();
 		String actResult = "Description";
 		Assert.assertEquals(expResult, actResult, "Incorrect Page");
+		Assert.assertEquals(true,LaptopTitle.isDisplayed());
 		System.out.println(LaptopTitle.getText());
+		System.out.println("");
+		Assert.assertEquals(true,LaptopDescription.isDisplayed());
 		System.out.println(LaptopDescription.getText());
+		System.out.println("");
 	}
 
+	//Author: Joe Jacob
 	public void carVehicles() {
 		Actions act = new Actions(driver);
+		Assert.assertEquals(true,carsVehicles.isDisplayed());
 		act.moveToElement(carsVehicles).build().perform();
+		Assert.assertEquals(true,cars.isDisplayed());
 		act.click(cars).perform();
 	}
 
-//	public void selectFilter() throws InterruptedException {
-//		selectMake.click();
-//		Thread.sleep(1000);
-//		selectMakeOption.click();
-//		Thread.sleep(3000);
-//		Select make = new Select(selectMake);
-//		make.selectByIndex(7);
-//		Thread.sleep(3000);
-//		JavascriptExecutor js=(JavascriptExecutor)driver;
-//		js.executeScript("document.getElementById('select-make').selectedIndex = 7;");
-//		
-//		selectModel.click();
-//		Select model = new Select(selectModel);
-//		model.selectByVisibleText("A4");
-//		selectMinPrice.click();
-//		Select minPrice = new Select(selectMinPrice);
-//		minPrice.selectByValue("5000");
-//		selectMaxPrice.click();
-//		Select maxPrice = new Select(selectMaxPrice);
-//		maxPrice.selectByValue("7000");	
-//		searchCarsButton.click();
-//	}
-
-	public void selectFilterActionClass() throws InterruptedException {
+	//Author: Joe Jacob
+	public void selectFilterActionClass() {
+		try {
+		wait.until(ExpectedConditions.visibilityOf(selectMake));
 		Actions act = new Actions(driver);
+		Assert.assertEquals(true,selectMake.isDisplayed());
 		act.click(selectMake).build().perform();
-//		act.click(selectMakeOption).build().perform();
 		for (int i = 0; i < 7; i++) {
 			act.sendKeys(Keys.ARROW_DOWN).perform();
 		}
 		act.sendKeys(Keys.ENTER).perform();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		Assert.assertEquals(true,selectModel.isDisplayed());
 		act.click(selectModel).build().perform();
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 9; i++) {
 			act.sendKeys(Keys.ARROW_DOWN).perform();
 		}
 		act.sendKeys(Keys.ENTER).perform();
-
+		Thread.sleep(2000);
+		Assert.assertEquals(true,selectMinPrice.isDisplayed());
 		act.click(selectMinPrice).build().perform();
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 11; i++) {
 			act.sendKeys(Keys.ARROW_DOWN).perform();
 		}
 		act.sendKeys(Keys.ENTER).perform();
-
+		Thread.sleep(2000);
+		Assert.assertEquals(true,selectMaxPrice.isDisplayed());
 		act.click(selectMaxPrice).build().perform();
 		for (int i = 0; i < 15; i++) {
 			act.sendKeys(Keys.ARROW_DOWN).perform();
 		}
 		act.sendKeys(Keys.ENTER).perform();
+		Assert.assertEquals(true,searchCarsButton.isEnabled());
 		searchCarsButton.click();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
+	//Author: Joe Jacob
 	public void viewProfile() {
+		wait.until(ExpectedConditions.visibilityOf(Laptop));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,800)", "");
+		Assert.assertEquals(true,Laptop.isDisplayed());
 		Laptop.click();
+		Assert.assertEquals(true,ViewProfileButton.isEnabled());
 		ViewProfileButton.click();
 		String expResult = EmailVerified.getText();
 		String actResult = "Email address verified";
@@ -279,10 +285,9 @@ public class GumtreeHomePage extends BasePage {
 		if (EmailVerified.isDisplayed()) {
 			System.out.println("Email address verified");
 		}
-		;
-
 	}
-
+	
+	//Author: Aaditya V
 	public void Favorite() {
 		// Gumtree_Homepage.click();
 		wait.until(ExpectedConditions.visibilityOf(searchBar));
@@ -324,32 +329,27 @@ public class GumtreeHomePage extends BasePage {
 
 	}
 
-//	public void TopCities() {
-//		JavascriptExecutor js=(JavascriptExecutor)driver;
-//		js.executeScript(" window.scrollBy(0,5500)","");		
-//		for(WebElement top : Top_Cities) {
-//			System.out.println(top.getText());
-//			Assert.assertEquals(true, top.isDisplayed());
-//		}
-//		
-//	}
-
+	//Author: Joe Jacob
 	public void printCarResults() {
-		Assert.assertEquals("Audi A4", CarsVerification.getText(), "Incorrect Page");
+		String CarVerify = CarsVerification.getText();
+		String[] trimmedText = CarVerify.split(" ");
+		System.out.println(trimmedText[3] +" "+ trimmedText[4]);
+		
+		Assert.assertEquals(true, CarsVerification.getText().contains("Audi A4"), "Incorrect Page");
 		for (int i = 0; i < 10; i++) {
 			System.out.println(carDetails.get(i).getText());
-			System.out.println("");
 		}
-
+		System.out.println("");
 	}
 
+	//Author: Joe Jacob
 	public void printLaptopResults() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,400)", "");
 		for (int i = 0; i < 10; i++) {
 			System.out.println(LaptopList.get(i).getText());
-			System.out.println("");
 		}
+		System.out.println("");
 		String actTitle = driver.getTitle();
 		String expTitle = "Laptop for Sale | Laptops | Gumtree";
 		Assert.assertEquals(expTitle, actTitle, "Incorrect Page");

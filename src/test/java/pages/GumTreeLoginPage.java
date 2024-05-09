@@ -1,11 +1,14 @@
 package pages;
 
+//Author: Aaditya V
+//Date of creation: 23/04/2024
+//Last modified: 03/04/2024
+
 import java.time.Duration;
 
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,10 +16,13 @@ import org.testng.Assert;
 
 public class GumTreeLoginPage extends BasePage {
 	public WebDriverWait wait;
-
+	JavascriptExecutor js;
+	
 	public GumTreeLoginPage(WebDriver driver) {
 		super(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		js = (JavascriptExecutor) driver;
+
 	}
 
 	@FindBy(xpath = "//a[@class='button button--dark button--bottom-label  e137x0or0 css-1bikcph']")
@@ -25,7 +31,7 @@ public class GumTreeLoginPage extends BasePage {
 	@FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
 	WebElement Privacy_accept;
 
-	@FindBy(xpath = "//div[@class='logo-text gumtree-text-svg hide-fully-to-s']")
+	@FindBy(xpath = "//a[@class='header-logo']")
 	WebElement Gumtree_Homepage;
 
 	@FindBy(xpath = "//a[@class='is-open']")
@@ -74,6 +80,7 @@ public class GumTreeLoginPage extends BasePage {
 			LoginClick.click();
 
 			// Entering Email ID
+			Assert.assertTrue(LoginEmail.isEnabled());
 			LoginEmail.sendKeys("freeze180601@gmail.com");
 
 			// Validation for Email ID
@@ -81,6 +88,7 @@ public class GumTreeLoginPage extends BasePage {
 			Assert.assertEquals(ActualText, "freeze180601@gmail.com", "Text entered is not correct");
 
 			// Entering password
+			Assert.assertTrue(LoginPassword.isEnabled());
 			LoginPassword.sendKeys("Password@123");
 
 			// Validation for password
@@ -96,12 +104,11 @@ public class GumTreeLoginPage extends BasePage {
 			String ActuallText = LoginVerification.getText();
 			String ExpectedText = "Hi Aaditya!";
 			Assert.assertEquals(ActuallText, ExpectedText, "Invalid Login");
-
+			
 			wait.until(ExpectedConditions.visibilityOf(Gumtree_Homepage));
-			Gumtree_Homepage.click();
-
 			// Validation whether homepage is displayed
 			Assert.assertTrue(Gumtree_Homepage.isDisplayed());
+			Gumtree_Homepage.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -133,13 +140,14 @@ public class GumTreeLoginPage extends BasePage {
 			// Validation for Login Button
 			Assert.assertTrue(LoginBTN.isEnabled());
 			LoginBTN.click();
+			
+			// Validation for error message
+			Assert.assertEquals(true, ErrorMsg.isDisplayed());
 
 			// Capturing error message and printing in the console
 			String errormessage = ErrorMsg.getText();
 			System.out.println(errormessage);
 
-			// Validation for error message
-			Assert.assertEquals(true, ErrorMsg.isDisplayed());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -147,6 +155,10 @@ public class GumTreeLoginPage extends BasePage {
 
 	public void logout() {
 		try {
+			driver.navigate().back();
+			// Scrolling Up
+			js.executeScript(" window.scrollTo(0,0)", "");
+			wait.until(ExpectedConditions.visibilityOf(MenuBTN));
 			// Validation for Menu button
 			Assert.assertTrue(MenuBTN.isEnabled());
 			MenuBTN.click();
