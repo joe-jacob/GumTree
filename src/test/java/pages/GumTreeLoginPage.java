@@ -2,7 +2,7 @@ package pages;
 
 //Author: Aaditya V
 //Date of creation: 23/04/2024
-//Last modified: 03/04/2024
+//Last modified: 05/05/2024
 
 import java.time.Duration;
 
@@ -64,6 +64,9 @@ public class GumTreeLoginPage extends BasePage {
 	@FindBy(xpath = "//a[@class='header-button header-nav-link']")
 	WebElement Login_Regis;
 
+	//Author: Aaditya V
+	//Date of creation: 23/04/2024
+	//Last modified: 02/05/2024
 	public void login() {
 		try {
 
@@ -113,7 +116,10 @@ public class GumTreeLoginPage extends BasePage {
 			e.printStackTrace();
 		}
 	}
-
+	
+	//Author: Aaditya V
+	//Date of creation: 23/04/2024
+	//Last modified: 02/05/2024
 	public void invalidlogin() {
 		try {
 			// Validation for Login/Register button
@@ -152,7 +158,10 @@ public class GumTreeLoginPage extends BasePage {
 			e.printStackTrace();
 		}
 	}
-
+	
+	//Author: Aaditya V
+	//Date of creation: 23/04/2024
+	//Last modified: 05/05/2024
 	public void logout() {
 		try {
 			driver.navigate().back();

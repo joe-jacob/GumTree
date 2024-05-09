@@ -2,7 +2,7 @@ package pages;
 
 //Author: Joe Jacob , Aaditya V
 //Date of creation: 23/04/2024
-//Last modified: 07/05/2024
+//Last modified: 08/05/2024
 
 import java.time.Duration;
 import java.util.List;
@@ -131,6 +131,8 @@ public class GumtreeHomePage extends BasePage {
 	WebElement LaptopVerification;
 
 	//Author: Aaditya V
+	//Date of creation: 25/04/2024
+	//Last modified: 07/05/2024
 	public void AboutGumtree() {
 		js.executeScript(" window.scrollBy(0,800)", "");
 
@@ -149,7 +151,9 @@ public class GumtreeHomePage extends BasePage {
 		}
 	
 	
-	//Author: Aaditya V
+	//Author: Aaditya V 
+	//Date of creation: 25/04/2024
+	//Last modified: 02/05/2024
 	public void MyDetails() {
 		
 		js.executeScript(" window.scrollBy(800,0)", "");
@@ -176,6 +180,8 @@ public class GumtreeHomePage extends BasePage {
 	}
 	
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 23/04/2024
 	public void HomePageVerification() {
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
@@ -184,9 +190,12 @@ public class GumtreeHomePage extends BasePage {
 	}
 	
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 25/04/2024
 	public void search() {
 		try {
 		Assert.assertEquals(true,searchBar.isDisplayed());
+		//Functionality to clear the search bar
 		String value = searchBar.getAttribute("value");
 		if (value != null) {
 			int valLen = value.length();
@@ -204,10 +213,13 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 07/05/2024
 	public void LaptopDetails() {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,400)", "");
+		//Validating if the laptop details are displayed 
 		Assert.assertEquals(true,Laptop.isDisplayed());
 		Laptop.click();
 		String expResult = LaptopVerification.getText();
@@ -222,8 +234,11 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 25/05/2024
 	public void carVehicles() {
 		Actions act = new Actions(driver);
+		//Functionality to go to the cars page
 		Assert.assertEquals(true,carsVehicles.isDisplayed());
 		act.moveToElement(carsVehicles).build().perform();
 		Assert.assertEquals(true,cars.isDisplayed());
@@ -231,9 +246,12 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 08/05/2024
 	public void selectFilterActionClass() {
 		try {
 		wait.until(ExpectedConditions.visibilityOf(selectMake));
+		//Functionality to select the various car filters using Action class
 		Actions act = new Actions(driver);
 		Assert.assertEquals(true,selectMake.isDisplayed());
 		act.click(selectMake).build().perform();
@@ -271,10 +289,13 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 26/05/2024
 	public void viewProfile() {
 		wait.until(ExpectedConditions.visibilityOf(Laptop));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,800)", "");
+		//Validating if the seller profile is displayed
 		Assert.assertEquals(true,Laptop.isDisplayed());
 		Laptop.click();
 		Assert.assertEquals(true,ViewProfileButton.isEnabled());
@@ -288,6 +309,8 @@ public class GumtreeHomePage extends BasePage {
 	}
 	
 	//Author: Aaditya V
+	//Date of creation: 24/04/2024
+	//Last modified: 02/05/2024
 	public void Favorite() {
 		// Gumtree_Homepage.click();
 		wait.until(ExpectedConditions.visibilityOf(searchBar));
@@ -330,7 +353,10 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 08/05/2024
 	public void printCarResults() {
+		//Functionality for validating and printing the car results
 		String CarVerify = CarsVerification.getText();
 		String[] trimmedText = CarVerify.split(" ");
 		System.out.println(trimmedText[3] +" "+ trimmedText[4]);
@@ -343,9 +369,12 @@ public class GumtreeHomePage extends BasePage {
 	}
 
 	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 26/04/2024
 	public void printLaptopResults() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(" window.scrollBy(0,400)", "");
+		//Functionality for validating and printing the laptop details
 		for (int i = 0; i < 10; i++) {
 			System.out.println(LaptopList.get(i).getText());
 		}

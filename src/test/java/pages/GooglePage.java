@@ -23,7 +23,10 @@ public class GooglePage extends BasePage {
 
 	@FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
 	WebElement Privacy_accept;
-
+	
+	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 23/04/2024
 	public void search() {
 		searchBox.clear();
 		searchBox.sendKeys("Gum Tree");
@@ -31,7 +34,10 @@ public class GooglePage extends BasePage {
 		act.sendKeys(Keys.ENTER).perform();
 
 	}
-
+	
+	//Author: Joe Jacob
+	//Date of creation: 23/04/2024
+	//Last modified: 24/04/2024
 	public void gumTree() {
 		gumTreePage.click();
 		Privacy_accept.click();
